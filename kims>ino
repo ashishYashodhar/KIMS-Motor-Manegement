@@ -1,0 +1,141 @@
+//KIMS Motor_Control 29_02_2020
+const int motor_1 = 4;
+const int motor_2 = 5;
+const int motor_3 = 6;
+const int motor_4 = 7;
+const int motor_5 = 8;
+const int motor_6 = 9;
+const int motor_7 = 10;
+const int motor_8 = 11;
+const int motor_9 = 12;
+const int motor_10 = 13;
+volatile int motor_1_Status = 0;
+volatile int motor_2_Status = 0;
+volatile int motor_3_Status = 0;
+volatile int motor_4_Status = 0;
+volatile int motor_5_Status = 0;
+volatile int motor_6_Status = 0;
+volatile int motor_7_Status = 0;
+volatile int motor_8_Status = 0;
+volatile int motor_9_Status = 0;
+volatile int motor_10_Status = 0;
+
+//reset function 
+void(* resetFunc) (void) = 0; //declare reset function @ address 0
+
+//Label function
+void Label()
+{
+  Serial.print("motor_id");
+  Serial.print(" : ");
+  Serial.print("motor_name");
+  Serial.println(" : Motor status");
+}
+
+//motor status function 
+int check_Motor(int motor_id,const char *motor_name,int motor_status)
+{
+  //Serial.print(motor_name);
+  
+  if (motor_status == 1)
+  {
+    Serial.print(motor_id);
+    Serial.print(" : ");
+    Serial.print(motor_name);
+    Serial.println(" : Motor off");
+  }
+  else
+  {
+    Serial.print(motor_id);
+    Serial.print(" : ");
+    Serial.print(motor_name);
+    Serial.println(" : motor on");
+  }
+  return 0;
+}
+void setup() {
+  //const char *var="FILTER FEED-1";
+  pinMode(motor_1,INPUT_PULLUP);
+  pinMode(motor_2,INPUT_PULLUP);
+  pinMode(motor_3,INPUT_PULLUP);
+  pinMode(motor_4,INPUT_PULLUP);
+  pinMode(motor_5,INPUT_PULLUP);
+  pinMode(motor_6,INPUT_PULLUP);
+  pinMode(motor_7,INPUT_PULLUP);
+  pinMode(motor_8,INPUT_PULLUP);
+  pinMode(motor_9,INPUT_PULLUP);
+  pinMode(motor_10,INPUT_PULLUP);
+  Serial.begin(9600);
+  
+  Serial.print("KIMS Motor Control\n");
+  //call label function
+  Label();
+  motor_1_Status = digitalRead(motor_1);
+  check_Motor(1,"FILTER FEED-1",motor_1_Status);
+  delay(2000);
+  motor_2_Status = digitalRead(motor_2);
+  check_Motor(1,"FILTER FEED-2",motor_2_Status);
+  delay(2000);
+  motor_3_Status = digitalRead(motor_3);
+  check_Motor(1,"REACTOR FEED PUMP-1",motor_3_Status);
+  delay(2000);
+  motor_4_Status = digitalRead(motor_4);
+  check_Motor(1,"REACTOR FEED PUMP-2",motor_4_Status);
+  delay(2000);
+  motor_5_Status = digitalRead(motor_5);
+  check_Motor(1,"COLLECTION TANK-1",motor_5_Status);
+  delay(2000);
+  motor_6_Status = digitalRead(motor_6);
+  check_Motor(1,"COLLECTION TANK-2",motor_6_Status);
+  delay(2000);
+  motor_7_Status = digitalRead(motor_7);
+  check_Motor(1,"BLOWER-1",motor_7_Status);
+  delay(2000);
+  motor_8_Status = digitalRead(motor_8);
+  check_Motor(1,"BLOWER-2",motor_8_Status);
+  delay(2000);
+  motor_9_Status = digitalRead(motor_9);
+  check_Motor(1,"BLOWER-3",motor_9_Status);
+  delay(2000);
+  motor_10_Status = digitalRead(motor_10);
+  check_Motor(1,"BLOWER-4",motor_10_Status);
+  delay(2000);
+
+
+}
+
+void loop() {
+  //resetFunc();//#this is the software reset fuction call when you needed...
+  //Serial.println("Void Setup Loop...");
+  motor_1_Status = digitalRead(motor_1);
+  check_Motor(1,"FILTER FEED-1",motor_1_Status);
+  delay(2000);
+  motor_2_Status = digitalRead(motor_2);
+  check_Motor(1,"FILTER FEED-2",motor_2_Status);
+  delay(2000);
+  motor_3_Status = digitalRead(motor_3);
+  check_Motor(1,"REACTOR FEED PUMP-1",motor_3_Status);
+  delay(2000);
+  motor_4_Status = digitalRead(motor_4);
+  check_Motor(1,"REACTOR FEED PUMP-2",motor_4_Status);
+  delay(2000);
+  motor_5_Status = digitalRead(motor_5);
+  check_Motor(1,"COLLECTION TANK-1",motor_5_Status);
+  delay(2000);
+  motor_6_Status = digitalRead(motor_6);
+  check_Motor(1,"COLLECTION TANK-2",motor_6_Status);
+  delay(2000);
+  motor_7_Status = digitalRead(motor_7);
+  check_Motor(1,"BLOWER-1",motor_7_Status);
+  delay(2000);
+  motor_8_Status = digitalRead(motor_8);
+  check_Motor(1,"BLOWER-2",motor_8_Status);
+  delay(2000);
+  motor_9_Status = digitalRead(motor_9);
+  check_Motor(1,"BLOWER-3",motor_9_Status);
+  delay(2000);
+  motor_10_Status = digitalRead(motor_10);
+  check_Motor(1,"BLOWER-4",motor_10_Status);
+  delay(2000);
+  
+}
