@@ -1,0 +1,20 @@
+#####################################
+#ashish yashodhar 
+#21_10_2020
+#####################################
+
+ESP01S Firmware Update Using USB-TTL
+
+https://www.instructables.com/ESP8266-Firmware-Update-Using-USB-TTL/
+
+Flash Program ESP-01 using USB Serial Adapter
+
+https://www.diyhobi.com/flash-program-esp-01-using-usb-serial-adapter/
+
+
+official docs
+
+https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html
+
+https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html
+
